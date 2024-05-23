@@ -1,5 +1,6 @@
 import React from "react";
 import { movies } from "./db";
+import Slider from "../components/slider";
 
 const Game = async () => {
   const movieID = movies[Math.floor(Math.random() * movies.length)];
@@ -22,6 +23,7 @@ const Game = async () => {
       </h2>
       <p>{movie.Plot}</p>
       <img src={movie.Poster} />
+      <Slider />
     </div>
   );
 };
