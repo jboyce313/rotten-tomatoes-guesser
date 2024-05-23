@@ -23,7 +23,7 @@ const Game = async () => {
       </h2>
       <p>{movie.Plot}</p>
       <img src={movie.Poster} />
-      <Slider />
+      <Slider rtScore={rtScore} />
     </div>
   );
 };

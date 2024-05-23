@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 
-const Slider = () => {
+const Slider = ({ rtScore }: { rtScore: number }) => {
   const [value, setValue] = useState(50);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,6 +20,18 @@ const Slider = () => {
         onChange={handleInputChange}
       />
       <p>Guess: {value}%</p>
+      <button
+        className="btn btn-primary"
+        onClick={() => {
+          alert(
+            value === rtScore
+              ? "You guessed correctly!"
+              : `You guessed ${value}%. The correct answer was ${rtScore}%.`
+          );
+        }}
+      >
+        Submit
+      </button>
     </div>
   );
 };
